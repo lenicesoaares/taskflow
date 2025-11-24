@@ -1,6 +1,6 @@
 # TaskFlow 📋
 
-Gerenciador de tarefas com drag & drop desenvolvido em HTML, CSS e JavaScript.
+Gerenciador de tarefas com drag & drop desenvolvido em HTML, CSS e JavaScript. https://lenicesoaares.github.io/taskflow/
 
 ## Funcionalidades
 - ✨ Adicionar, editar e excluir tarefas
