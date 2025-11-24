@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow | Gerenciador de Tarefas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1> Gerenciador de Tarefas <i class="fas fa-tasks"></i></h1>
+            <p>Organize suas tarefas de forma simples e intuitiva</p>
+        </header>
+
+        <!-- Formulário para adicionar tarefas -->
+        <div class="add-task-section">
+            <div class="input-group">
+                <input type="text" id="task-input" placeholder="Digite uma nova tarefa..." maxlength="100">
+                <select id="task-priority">
+                    <option value="low">🟢 Baixa</option>
+                    <option value="medium" selected>🟡 Média</option>
+                    <option value="high">🔴 Alta</option>
+                </select>
+                <button id="add-task-btn">
+                     Adicionar
+                </button>
+            </div>
+        </div>
+
+        <!-- Container das colunas -->
+        <div class="board">
+            <!-- Coluna To Do -->
+            <div class="column" id="todo-column">
+                <div class="column-header">
+                    <h2><i class="fas fa-list"></i> A Fazer</h2>
+                    <span class="task-count" id="todo-count">0</span>
+                </div>
+                <div class="tasks-container" id="todo-tasks" data-status="todo">
+                    <!-- Tarefas serão inseridas aqui via JavaScript -->
+                </div>
+            </div>
+
+            <!-- Coluna Doing -->
+            <div class="column" id="doing-column">
+                <div class="column-header">
+                    <h2><i class="fas fa-spinner"></i> Fazendo</h2>
+                    <span class="task-count" id="doing-count">0</span>
+                </div>
+                <div class="tasks-container" id="doing-tasks" data-status="doing">
+                    <!-- Tarefas serão inseridas aqui via JavaScript -->
+                </div>
+            </div>
+
+            <!-- Coluna Done -->
+            <div class="column" id="done-column">
+                <div class="column-header">
+                    <h2><i class="fas fa-check"></i> Concluído</h2>
+                    <span class="task-count" id="done-count">0</span>
+                </div>
+                <div class="tasks-container" id="done-tasks" data-status="done">
+                    <!-- Tarefas serão inseridas aqui via JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Controles -->
+        <div class="controls">
+            <button id="clear-completed" class="btn-secondary">
+                 Limpar Concluídas <i class="fas fa-trash"></i>
+            </button>
+            
+        </div>
+    </div>
+
+    <!-- Modal para editar tarefa -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Editar Tarefa</h3>
+            <input type="text" id="edit-task-input">
+            <select id="edit-task-priority">
+                <option value="low">🟢 Baixa</option>
+                <option value="medium">🟡 Média</option>
+                <option value="high">🔴 Alta</option>
+            </select>
+            <div class="modal-actions">
+                <button id="save-edit-btn" class="btn-primary">Salvar</button>
+                <button id="cancel-edit-btn" class="btn-secondary">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
